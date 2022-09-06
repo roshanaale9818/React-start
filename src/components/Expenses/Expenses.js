@@ -3,13 +3,15 @@ import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 import React from "react";
 
-const Expenses=()=> {
-    const expenses = [
-        { id: "el1", title: 'Car Insurance', amount: 298.9, date: new Date(2022, 2, 28) },
-        { id: "el2", title: 'Toilet paper', amount: 298.9, date: new Date(2022, 2, 28) },
-        { id: "el3", title: 'Car tyres', amount: 298.9, date: new Date(2022, 2, 28) },
-        { id: "el4", title: 'Out Dinner Insurance', amount: 298.9, date: new Date(2021, 2, 28) }
-    ]
+const Expenses=(props)=> {
+    // const expenses = [
+    //     { id: "el1", title: 'Car Insurance', amount: 298.9, date: new Date(2022, 2, 28) },
+    //     { id: "el2", title: 'Toilet paper', amount: 298.9, date: new Date(2022, 2, 28) },
+    //     { id: "el3", title: 'Car tyres', amount: 298.9, date: new Date(2022, 2, 28) },
+    //     { id: "el4", title: 'Out Dinner Insurance', amount: 298.9, date: new Date(2021, 2, 28) }
+    // ]
+    const expenses = props.data;
+    // console.log("aayo ha")
     return (
         // <div className='expenses'>
         //     <ExpenseItem title={expenses[0].title} amount={expenses[0].amount} date={expenses[0].date}></ExpenseItem>
