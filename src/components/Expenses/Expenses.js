@@ -4,6 +4,7 @@ import Card from '../UI/Card';
 import React, { useState } from "react";
 import ExpensesFilter from './ExpensesFilter';
 import ExpensesList from './ExpensesList';
+import ExpensesChart from './ExpensesChart';
 
 const Expenses = (props) => {
     // const expenses = [
@@ -17,7 +18,7 @@ const Expenses = (props) => {
     const expenses = props.data;
     const filteredExpenses = props.data.filter(expense => expense.date.getFullYear().toString() === filteredYear);
     const filterChangeHandler = (data) => {
-        console.log("SELECTED LAYER", data);
+        // console.log("SELECTED LAYER", data);
         setFilteredYear(data);
         // props.expenses.filter(x=>x.date == data);
 
@@ -31,6 +32,7 @@ const Expenses = (props) => {
         //     <ExpenseItem title={expenses[3].title} amount={expenses[3].amount} date={expenses[3].date}></ExpenseItem>
         // </div>
         <div>
+            
 
 
             <Card className='expenses'>
@@ -51,7 +53,7 @@ const Expenses = (props) => {
             <ExpenseItem key={x.id} title={x.title} amount={x.amount} date={x.date}/>
                 
                 )} */}
-
+                <ExpensesChart expenses={filteredExpenses}/>
                 <ExpensesList items={filteredExpenses}></ExpensesList>
             </Card>
         </div>
